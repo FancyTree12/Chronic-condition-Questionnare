@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rheumatic Conditions Assessment</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="logic.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Rheumatic Conditions Assessment</h1>
+  </header>
+
+  <div class="container">
+    <h1 id="formTitle">Disease Risk Assessment</h1>
+    <p id="formInstructions">Answer the following questions to assess your risk. Note that this is NOT a diagnosis. Always consult a doctor for professional advice.</p>
+
+    <form id="screeningForm" aria-labelledby="formTitle" aria-describedby="formInstructions">
+      <progress id="progressBar" value="0" max="50"></progress>
+
+      <!-- Your 50 fieldset questions go here -->
+      <!-- Question format example: -->
+      <fieldset>
+        <legend>Question 1</legend>
+        <label for="q1">Do you frequently experience chronic joint pain?</label>
+        <select id="q1" name="q1" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:2,RA:3,Lupus:2,Gout:2,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 2</legend>
+        <label for="q2">Do you have persistent lower back pain that improves with movement?</label>
+        <select id="q2" name="q2" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:1,Lupus:0,Gout:0,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 3</legend>
+        <label for="q3">Have you experienced prolonged morning stiffness lasting more than 30 minutes?</label>
+        <select id="q3" name="q3" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:2,RA:3,Lupus:2,Gout:1,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 4</legend>
+        <label for="q4">Do you have swelling in multiple joints?</label>
+        <select id="q4" name="q4" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:3,Lupus:2,Gout:2,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 5</legend>
+        <label for="q5">Have you noticed changes in the shape or structure of any of your joints?</label>
+        <select id="q5" name="q5" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:2,RA:3,Lupus:1,Gout:2,Pagets:2">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 6</legend>
+        <label for="q6">Do you experience episodes of extreme fatigue that interfere with daily activities?</label>
+        <select id="q6" name="q6" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:2,Lupus:3,Gout:0,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 7</legend>
+        <label for="q7">Have you experienced unexplained fevers or night sweats?</label>
+        <select id="q7" name="q7" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:2,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 8</legend>
+        <label for="q8">Do you experience recurring redness or warmth in your joints?</label>
+        <select id="q8" name="q8" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:2,Lupus:1,Gout:3,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 9</legend>
+        <label for="q9">Do you have frequent episodes of muscle weakness or loss of strength?</label>
+        <select id="q9" name="q9" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:2,Lupus:3,Gout:0,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 10</legend>
+        <label for="q10">Have you had persistent pain or tenderness in your tendons?</label>
+        <select id="q10" name="q10" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:2,Lupus:1,Gout:1,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <!-- AS Specific Questions -->
+      <fieldset>
+        <legend>Question 11</legend>
+        <label for="q11">Do you have a family history of ankylosing spondylitis or other inflammatory arthritis?</label>
+        <select id="q11" name="q11" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:2,Lupus:1,Gout:1,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 12</legend>
+        <label for="q12">Have you been diagnosed with inflammatory bowel disease (IBD) or psoriasis?</label>
+        <select id="q12" name="q12" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:1,Lupus:1,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 13</legend>
+        <label for="q13">Have you experienced eye inflammation (uveitis), redness, or sensitivity to light?</label>
+        <select id="q13" name="q13" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:0,Lupus:2,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 14</legend>
+        <label for="q14">Do you have limited mobility in your spine or experience difficulty standing upright?</label>
+        <select id="q14" name="q14" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:1,Lupus:0,Gout:0,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 15</legend>
+        <label for="q15">Have you tested positive for the HLA-B27 gene?</label>
+        <select id="q15" name="q15" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:0,Lupus:0,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 16</legend>
+        <label for="q16">Do you have difficulty expanding your chest when breathing deeply?</label>
+        <select id="q16" name="q16" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:0,Lupus:1,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 17</legend>
+        <label for="q17">Have you noticed increasing stiffness in your hips or shoulders?</label>
+        <select id="q17" name="q17" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:3,RA:2,Lupus:1,Gout:0,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <!-- RA Specific Questions -->
+      <fieldset>
+        <legend>Question 18</legend>
+        <label for="q18">Have you been diagnosed with any autoimmune disease in the past?</label>
+        <select id="q18" name="q18" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:3,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 19</legend>
+        <label for="q19">Do you experience joint pain that affects both sides of your body (symmetrical pain)?</label>
+        <select id="q19" name="q19" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:3,Lupus:2,Gout:1,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 20</legend>
+        <label for="q20">Have you noticed swelling, tenderness, or warmth in your knuckles, wrists, or ankles?</label>
+        <select id="q20" name="q20" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:3,Lupus:2,Gout:2,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 21</legend>
+        <label for="q21">Do you experience difficulty in gripping objects or opening jars due to joint stiffness?</label>
+        <select id="q21" name="q21" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:3,Lupus:1,Gout:1,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 22</legend>
+        <label for="q22">Have you had unexplained weight loss accompanied by joint pain?</label>
+        <select id="q22" name="q22" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:3,Lupus:2,Gout:0,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 23</legend>
+        <label for="q23">Do you feel extreme stiffness in your joints that lasts for hours in the morning?</label>
+        <select id="q23" name="q23" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:2,RA:3,Lupus:2,Gout:1,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 24</legend>
+        <label for="q24">Have you had episodes where your hands appear swollen and puffy?</label>
+        <select id="q24" name="q24" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:3,Lupus:2,Gout:1,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <!-- Paget's Disease Questions -->
+      <fieldset>
+        <legend>Question 25</legend>
+        <label for="q25">Have you experienced deep, aching bone pain that worsens at night?</label>
+        <select id="q25" name="q25" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:1,Lupus:0,Gout:0,Pagets:3">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 26</legend>
+        <label for="q26">Have you noticed that a bone in your body has changed shape or enlarged over time?</label>
+        <select id="q26" name="q26" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:1,Lupus:0,Gout:0,Pagets:3">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 27</legend>
+        <label for="q27">Do you have unexplained fractures or bone deformities?</label>
+        <select id="q27" name="q27" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:1,Lupus:0,Gout:0,Pagets:3">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 28</legend>
+        <label for="q28">Have you experienced unexplained hearing loss or ringing in your ears?</label>
+        <select id="q28" name="q28" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:1,Gout:0,Pagets:3">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 29</legend>
+        <label for="q29">Has your doctor ever mentioned that your alkaline phosphatase levels were elevated?</label>
+        <select id="q29" name="q29" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:0,Gout:0,Pagets:3">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 30</legend>
+        <label for="q30">Have you had unexplained headaches or pressure sensations in your skull?</label>
+        <select id="q30" name="q30" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:1,Gout:0,Pagets:3">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 31</legend>
+        <label for="q31">Do you have a family history of Paget's disease?</label>
+        <select id="q31" name="q31" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:0,Gout:0,Pagets:3">Yes</option>
+        </select>
+      </fieldset>
+
+      <!-- Gout Specific Questions -->
+      <fieldset>
+        <legend>Question 32</legend>
+        <label for="q32">Have you experienced sudden, intense joint pain that occurs at night?</label>
+        <select id="q32" name="q32" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:1,Lupus:0,Gout:3,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 33</legend>
+        <label for="q33">Have you noticed that your big toe or another joint becomes red, swollen, and extremely painful?</label>
+        <select id="q33" name="q33" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:1,Lupus:0,Gout:3,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 34</legend>
+        <label for="q34">Have you been diagnosed with high uric acid levels in the past?</label>
+        <select id="q34" name="q34" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:0,Gout:3,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 35</legend>
+        <label for="q35">Do you frequently consume alcohol or high-purine foods such as red meat or shellfish?</label>
+        <select id="q35" name="q35" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:0,Gout:2,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 36</legend>
+        <label for="q36">Have you ever had kidney stones or other kidney problems?</label>
+        <select id="q36" name="q36" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:2,Gout:3,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 37</legend>
+        <label for="q37">Do you experience episodes of joint pain that last for a few days and then disappear?</label>
+        <select id="q37" name="q37" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:1,Lupus:1,Gout:3,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 38</legend>
+        <label for="q38">Has a doctor ever diagnosed you with metabolic syndrome, high blood pressure, or diabetes?</label>
+        <select id="q38" name="q38" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:1,Lupus:1,Gout:3,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <!-- Lupus Specific Questions -->
+      <fieldset>
+        <legend>Question 39</legend>
+        <label for="q39">Do you experience frequent rashes, particularly on your face in a butterfly-shaped pattern?</label>
+        <select id="q39" name="q39" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 40</legend>
+        <label for="q40">Have you had unexplained hair loss or thinning?</label>
+        <select id="q40" name="q40" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 41</legend>
+        <label for="q41">Do you have extreme sensitivity to sunlight or fluorescent lights, causing rashes or fatigue?</label>
+        <select id="q41" name="q41" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 42</legend>
+        <label for="q42">Have you experienced mouth or nose ulcers that take a long time to heal?</label>
+        <select id="q42" name="q42" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 43</legend>
+        <label for="q43">Do you suffer from recurring chest pain that worsens when you breathe deeply?</label>
+        <select id="q43" name="q43" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:0,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 44</legend>
+        <label for="q44">Have you experienced unexplained episodes of blood clotting or low blood cell counts?</label>
+        <select id="q44" name="q44" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 45</legend>
+        <label for="q45">Do you have Raynaud's phenomenon, where your fingers or toes turn white or blue in cold temperatures?</label>
+        <select id="q45" name="q45" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:1,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 46</legend>
+        <label for="q46">Have you experienced unexplained swelling in your legs, feet, or around your eyes?</label>
+        <select id="q46" name="q46" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:1,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <!-- Additional Medical History Questions -->
+      <fieldset>
+        <legend>Question 47</legend>
+        <label for="q47">Have you ever tested positive for ANA (antinuclear antibodies)?</label>
+        <select id="q47" name="q47" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:1,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 48</legend>
+        <label for="q48">Have you been diagnosed with chronic kidney disease or liver problems?</label>
+        <select id="q48" name="q48" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:1,Lupus:2,Gout:2,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 49</legend>
+        <label for="q49">Do you smoke or have a history of smoking?</label>
+        <select id="q49" name="q49" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:1,RA:2,Lupus:1,Gout:1,Pagets:1">Yes</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 50</legend>
+        <label for="q50">Have you had frequent miscarriages or fertility issues without a known cause?</label>
+        <select id="q50" name="q50" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="0">No</option>
+          <option value="AS:0,RA:0,Lupus:3,Gout:0,Pagets:0">Yes</option>
+        </select>
+      </fieldset>
+      
+      <div id="result" class="result-container" style="display:none;"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+</body>
+</html>
